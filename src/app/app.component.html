@@ -9,20 +9,22 @@
     <h1>{{text}}</h1>
   -->
 </div>
-<div class="post-form">
+<div class="post-form container">
   <form (submit)="addPost()">
-    <p><input [(ngModel)]="title" name="title" type="text" placeholder="Post Title"></p>
-    <p><textarea [(ngModel)]="body" name="body" id="" cols="30" rows="10" placeholder="Post Body"></textarea></p>
-    <p><input type="submit" value="Submit"></p>
+    <p><input class="form-control" [(ngModel)]="title" name="title" type="text" placeholder="Post Title"></p>
+    <p><textarea class="form-control" [(ngModel)]="body" name="body" id="" cols="30" rows="10"
+        placeholder="Post Body"></textarea></p>
+    <p><input class="btn btn-primary" type="submit" value="Submit"></p>
   </form>
-</div>
-<div>
-  <ul>
-    <li *ngFor="let post of posts">
-      <h3>{{post.title}}</h3>
-      <p>{{post.body}}</p>
-    </li>
-  </ul>
+
+  <div>
+    <div class="card" *ngFor="let post of posts">
+      <div class="card-body">
+        <h3 class="card-title">{{post.title}}</h3>
+        <p class="card-text">{{post.body}}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <router-outlet></router-outlet>

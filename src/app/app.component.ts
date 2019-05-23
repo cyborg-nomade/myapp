@@ -15,7 +15,7 @@ export class AppComponent {
   body: string;
 
   constructor(private postService: PostService) {
-    this.postService.getPosts().then(posts => {
+    this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
     });
   }
@@ -26,7 +26,9 @@ export class AppComponent {
       body: this.body
     };
 
-    this.postService.addPost(newPost);
+    this.postService.addPost(newPost).subscribe(post => {
+      this.posts.push(post);
+    });
     return false;
   }
 
