@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
+import { Post } from './services/post';
+import { PostService } from './services/post.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [PostService]
 })
 export class AppComponent {
   text:string;
+  posts:Post[];
 
-  constructor(){
-    this.text = 'Hello';
+  constructor(private _postService:PostService){
+    
   }
 
   clicked (event) {
