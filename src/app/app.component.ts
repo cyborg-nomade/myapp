@@ -9,20 +9,22 @@ import { PostService } from './services/post.service';
   providers: [PostService]
 })
 export class AppComponent {
-  text:string;
-  posts:Post[];
+  text: string;
+  posts: Post[];
 
-  constructor(private _postService:PostService){
-    
+  constructor(private postService: PostService) {
+    this.postService.getPosts().then(posts => {
+      this.posts = posts;
+    });
   }
 
-  clicked (event) {
+  clicked(event: any) {
     console.log(event);
-    this.text='Button clicked'
+    this.text = 'Button clicked';
   }
 
-  showText (event) {
-    //console.log(event.target.value);
+  showText(event: any) {
+    // console.log(event.target.value);
     console.log(this.text);
   }
 }

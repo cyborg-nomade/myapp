@@ -1,11 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to My Blog!
   </h1>
-  <button (click) = "clicked($event)">Click</button>
-  <input type="text" [(ngModel)]="text" name="text" (keyup.enter) = "showText($event)">
+  <button (click)="clicked($event)">Click</button>
+  <input type="text" [(ngModel)]="text" name="text" (keyup.enter)="showText($event)">
   <h1>{{text}}</h1>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let post of posts">
+      <h3>{{post.title}}</h3>
+      <p>{{post.body}}</p>
+    </li>
+  </ul>
 </div>
 
 <router-outlet></router-outlet>
