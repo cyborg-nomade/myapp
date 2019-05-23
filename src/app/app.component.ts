@@ -9,8 +9,10 @@ import { PostService } from './services/post.service';
   providers: [PostService]
 })
 export class AppComponent {
-  text: string;
+  // text: string; -- older functionality
   posts: Post[];
+  title: string;
+  body: string;
 
   constructor(private postService: PostService) {
     this.postService.getPosts().then(posts => {
@@ -18,6 +20,17 @@ export class AppComponent {
     });
   }
 
+  addPost() {
+    const newPost = {
+      title: this.title,
+      body: this.body
+    };
+
+    this.postService.addPost(newPost);
+    return false;
+  }
+
+  /* older functionality (click event tryouts)
   clicked(event: any) {
     console.log(event);
     this.text = 'Button clicked';
@@ -27,4 +40,5 @@ export class AppComponent {
     // console.log(event.target.value);
     console.log(this.text);
   }
+  */
 }
