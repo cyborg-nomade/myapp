@@ -6,8 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { ServicesComponent } from './components/services/services.component';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, ServicesComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

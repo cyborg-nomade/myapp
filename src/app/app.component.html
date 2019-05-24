@@ -1,15 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to My Blog!
-  </h1>
+<ul>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/about">About</a></li>
+  <li><a routerLink="/services">Services</a></li>
+</ul>
+
   <!-- older functionality (events tryouts)
     <button (click)="clicked($event)">Click</button>
     <input type="text" [(ngModel)]="text" name="text" (keyup.enter)="showText($event)">
     <h1>{{text}}</h1>
   -->
-</div>
+
+<!--old functionality posts.
 <div class="post-form container">
+  <h1>
+    Welcome to My Blog!
+  </h1>
   <form (submit)="addPost()">
     <p><input class="form-control" [(ngModel)]="title" name="title" type="text" placeholder="Post Title"></p>
     <p><textarea class="form-control" [(ngModel)]="body" name="body" id="" cols="30" rows="10"
@@ -26,5 +31,5 @@
     </div>
   </div>
 </div>
-
+-->
 <router-outlet></router-outlet>

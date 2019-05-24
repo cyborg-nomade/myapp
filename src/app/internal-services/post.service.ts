@@ -1,3 +1,4 @@
+/* -- old functionality posts
 import { Injectable } from '@angular/core';
 import { Post } from './post';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -27,3 +28,4 @@ export class PostService {
     );
   }
 }
+*/
